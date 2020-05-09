@@ -1,0 +1,5 @@
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Models\bin\Debug\SGBank.Models.dll
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Models\bin\Debug\SGBank.Models.pdb
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Models\obj\Debug\SGBank.Models.dll
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Models\obj\Debug\SGBank.Models.pdb
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Models\obj\Debug\SGBank.Models.csprojAssemblyReference.cache

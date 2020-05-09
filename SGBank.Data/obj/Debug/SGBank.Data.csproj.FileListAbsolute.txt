@@ -1,0 +1,8 @@
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\bin\Debug\SGBank.Data.dll
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\bin\Debug\SGBank.Data.pdb
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\bin\Debug\SGBank.Models.dll
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\bin\Debug\SGBank.Models.pdb
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\obj\Debug\SGBank.Data.csprojAssemblyReference.cache
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\obj\Debug\SGBank.Data.csproj.CopyComplete
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\obj\Debug\SGBank.Data.dll
+C:\Users\Jeremy\source\repos\SGBankSource\SGBank.Data\obj\Debug\SGBank.Data.pdb
