@@ -16,6 +16,9 @@ namespace SGBank.BLL.WithdrawRules
             {
                 case AccountType.Free:
                     return new FreeAccountWithdrawRule();
+                case AccountType.Basic:
+                    return new BasicAccountWithdrawRule();
+
                 default:
                     throw new Exception("Account type is not supported!");
 

@@ -9,36 +9,38 @@ using SGBank.Models.Responses;
 
 namespace SGBank.BLL.WithdrawRules
 {
-    public class FreeAccountWithdrawRule : IWithdraw
+    public class BasicAccountWithdrawRule : IWithdraw
     {
         public AccountWithdrawResponse Withdraw(Account account, decimal amount)
         {
             AccountWithdrawResponse response = new AccountWithdrawResponse();
-            if (account.Type != AccountType.Free)
+
+            if(account.Type != AccountType.Basic)
             {
                 response.Success = false;
-                response.Message = "Error: a non-free account hit the Free Withdraw Rule. Contact IT.";
+                response.Message = "Error: a non-basic account hit the Basic Withdraw Rule. Contact IT";
                 return response;
             }
 
-            if (amount >= 0)
+            if(amount >= 0)
             {
                 response.Success = false;
                 response.Message = "Withdrawal amounts must be negative!";
                 return response;
             }
 
-            if (amount < -100)
+            if(amount < -500)
             {
                 response.Success = false;
-                response.Message = "Free accounts cannot withdraw more than $100!";
+                response.Message = "Basic accounts cannot withdraw more than $500!";
                 return response;
+
             }
 
-            if (account.Balance + amount < 0)
+            if(account.Balance + amount < -100)
             {
                 response.Success = false;
-                response.Message = "Free accounts cannot overdraft";
+                response.Message = "This amount will overdraft more than your $100 limit!";
                 return response;
             }
 
@@ -46,10 +48,16 @@ namespace SGBank.BLL.WithdrawRules
             response.Account = account;
             response.Amount = amount;
             response.OldBalance = account.Balance;
-            response.Account.Balance = response.Account.Balance + amount;
-            // assignment said "deposit", but assuming that was a typo
+
+            account.Balance = account.Balance + amount;
+
+            if(account.Balance < 0)
+            {
+                //overdraft fee
+                account.Balance = account.Balance - 10;
+            }
+
             return response;
         }
     }
-
 }

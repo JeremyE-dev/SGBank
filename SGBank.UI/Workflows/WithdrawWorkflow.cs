@@ -29,7 +29,7 @@ namespace SGBank.UI.Workflows
                 Console.WriteLine("Withdrawal completed!");
                 Console.WriteLine($"Account Number: {response.Account.AccountNumber}");
                 Console.WriteLine($"Old balance: {response.OldBalance:c}");
-                Console.WriteLine($"Amount Deposited: {response.Amount:c}");
+                Console.WriteLine($"Amount Withdrawn: {response.Amount:c}");
                 Console.WriteLine($"New balance: {response.Account.Balance:c}");
             }
             else

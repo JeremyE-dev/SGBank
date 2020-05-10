@@ -16,27 +16,33 @@ namespace SGBank.BLL.DepositRules
         {
             AccountDepositResponse response = new AccountDepositResponse();
 
-            if(account.Type != AccountType.Basic && account.Type != AccountType.Premium)
+            //if(account.Type != AccountType.Basic && account.Type != AccountType.Premium)
+            if (account.Type == AccountType.Free)
             {
                 response.Success = false;
                 response.Message = "Error: Only basic and premium accounts can deposit with no limit. Contact IT";
                 return response;
             }
 
-            if(amount <= 0)
+            else if(amount <= 0)
             {
                 response.Success = false;
                 response.Message = "Deposit amounts must be positive";
                 return response;
             }
 
-            response.Success = true;
-            response.Account = account;
-            response.Amount = amount;
-            response.OldBalance = account.Balance;
-            response.Account.Balance = response.Account
-                .Balance + amount;
-            return response;
+            else
+            {
+                response.Success = true;
+                response.Account = account;
+                response.Amount = amount;
+                response.OldBalance = account.Balance;
+                response.Account.Balance = response.Account
+                    .Balance + amount;
+                return response;
+            }
+
+         
 
         }
     }

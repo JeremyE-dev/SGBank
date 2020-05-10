@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SGBank.Models.Interfaces;
 using SGBank.Models;
+using SGBank.Models.Interfaces;
+
+
 namespace SGBank.Data
 {
-    public class BasicAccountTestRepository:IAccountRepository
+    class PremiumAccountTestRepository : IAccountRepository
     {
         private static Account _account = new Account()
-        {
-            Name = "Basic Account",
+        { 
+            Name = "Premium Account",
             Balance = 100M,
-            AccountNumber = "33333",
-            Type = AccountType.Basic
-
+            AccountNumber = "44444",
+            Type = AccountType.Premium
+         
         };
 
         public Account LoadAccount(string AccountNumber)
@@ -34,6 +36,5 @@ namespace SGBank.Data
         {
             _account = account;
         }
-
     }
 }
