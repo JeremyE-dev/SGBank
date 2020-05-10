@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicAccountTestRepository.cs" />
+    <Compile Include="FileAccountRepository.cs" />
     <Compile Include="FreeAccountTestRepository.cs" />
     <Compile Include="PremiumAccountTestRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

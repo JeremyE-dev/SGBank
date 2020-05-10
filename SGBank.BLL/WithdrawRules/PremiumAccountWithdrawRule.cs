@@ -9,12 +9,44 @@ using SGBank.Models.Responses;
 
 namespace SGBank.BLL.WithdrawRules
 {
-    class PremiumAccountWithdrawRule : IWithdraw
+    public class PremiumAccountWithdrawRule : IWithdraw
     {
-        //rules: Must be negative, except for 
+        //rules: Must be negative, except for overdraft rule, no fee assessed for overdraft
         public AccountWithdrawResponse Withdraw(Account account, decimal amount)
         {
             //need a response object to return
+            AccountWithdrawResponse response = new AccountWithdrawResponse();
+
+            if (account.Type != AccountType.Premium)
+            {
+                response.Success = false;
+                response.Message = "Error: a non-premium account hit the Premium Withdraw Rule. Contact IT";
+                return response;
+            }
+
+            if (amount >= 0)
+            {
+                response.Success = false;
+                response.Message = "Withdrawal amounts must be negative!";
+                return response;
+            }
+
+
+            if (account.Balance + amount < -500)
+            {
+                response.Success = false;
+                response.Message = "This amount will overdraft more than your $500 limit!";
+                return response;
+            }
+
+            response.Success = true;
+            response.Account = account;
+            response.Amount = amount;
+            response.OldBalance = account.Balance;
+
+            account.Balance = account.Balance + amount;
+
+            return response;
 
         }
     }

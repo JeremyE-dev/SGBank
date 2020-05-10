@@ -40,16 +40,42 @@ namespace SGBank.Tests
             account.AccountNumber = accountNumber;
             account.Balance = balance;
             account.Type = accountType;
-
-
-
-
+           
             //takes in locat account var and amount param
             AccountDepositResponse response = deposit.Deposit(account, amount);
 
             Assert.AreEqual(expectedResult, response.Success);
 
 
+
+
+        }
+
+       [Test]
+       //test cases
+       //fail, cannot overdraft more than 500
+       [TestCase("44444", "Premium Account", 100, AccountType.Premium, -601, false )]//fail, cannot overdraft more than 500
+       [TestCase("44444", "Premium Account", 100, AccountType.Premium, -599, true)]//pass, sucessful overdraft less than 500 over
+       [TestCase("44444", "Premium Account", 100, AccountType.Basic, -10, false)] //fail, not a basic account type
+       [TestCase("44444", "Premium Account", 100, AccountType.Premium, 10, false)] //fail, positive number withdrawn
+       [TestCase("44444", "Premium Account", 100, AccountType.Premium, -10, true)]//sucessful withdrawal
+        //sucessful withdrawal
+        public void PremiumAccountWithdrawalTest(string accountNumber, string name, decimal balance,
+          AccountType accountType, decimal amount, bool expectedResult)
+        {
+            IWithdraw withdraw = new PremiumAccountWithdrawRule();
+
+            Account account = new Account()
+            {
+                Name = name,
+                AccountNumber = accountNumber,
+                Balance = balance,
+                Type = accountType
+
+            };
+
+            AccountWithdrawResponse response = withdraw.Withdraw(account, amount);
+            Assert.AreEqual(expectedResult, response.Success);
 
 
         }

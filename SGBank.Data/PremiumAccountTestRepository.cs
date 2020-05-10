@@ -9,7 +9,7 @@ using SGBank.Models.Interfaces;
 
 namespace SGBank.Data
 {
-    class PremiumAccountTestRepository : IAccountRepository
+    public class PremiumAccountTestRepository : IAccountRepository
     {
         private static Account _account = new Account()
         { 
