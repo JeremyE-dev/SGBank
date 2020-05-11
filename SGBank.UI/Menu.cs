@@ -41,6 +41,9 @@ namespace SGBank.UI
                         break;
                     case "Q":
                         return;
+
+                    case "q":
+                        return;
                 }
 
             }

@@ -12,12 +12,20 @@ namespace SGBank.Data
 {
     public class FileAccountRepository : IAccountRepository
     {
-        private string path = "C:/Users/Jeremy/source/repos/SGBank052020/SGBank.Data/Account.txt";
+        private string path = "C:/Users/Jeremy/source/repos/SGBank052020/SGBank.Data/Accounts.txt";
 
         private List<Account> AccountsList = new List<Account>();
+
+        private Account _account;
+
+        public FileAccountRepository()
+        {
+            ReadTheFile();
+
+        }
         
         //this method will read the file and place each account in a list of acounts it in an list of accounts
-        public void ReadTheFile()
+        private void ReadTheFile()
         {
             if (File.Exists(path))
             {
@@ -58,36 +66,41 @@ namespace SGBank.Data
 
             }
 
-       
+        }
 
+        private Account ExtractAccount(string AccountNumber)
+        {
+            Account extractedAccount = null;
+           foreach(Account x in AccountsList)
+            {
+                if (x.AccountNumber == AccountNumber)
+                    extractedAccount = x;
+                
+            }
+
+            return extractedAccount;
+         
 
         }
         
-        //not that I have several accounts in a list which one do I load??
+        //
         public Account LoadAccount(string AccountNumber)
         {
-            //throw new NotImplementedException();
-
-            //look in the accountList and if it exists return it
-            //if it does not exist return null
-            //assume there will not be more than one of the same account number
-            foreach(Account a in AccountsList) //could this be a linq query??
+            _account = ExtractAccount(AccountNumber);
+           
+            if (!AccountNumber.Equals(_account.AccountNumber))
+                return null;
+            else
             {
-                if(a.AccountNumber == AccountNumber)
-                {
-                    return a;
-                }
-
-               
+                return _account;
             }
 
-            return null;
 
         }
 
         public void SaveAccount(Account account)
         {
-            throw new NotImplementedException();
+            _account = account;
         }
     }
 }

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Ninject;
+
 namespace SGBank.UI.Workflows
 {
     public class AccountLookupWorkflow
@@ -14,6 +16,7 @@ namespace SGBank.UI.Workflows
         {
             AccountManager manager = AccountManagerFactory.Create();
 
+            
             Console.Clear();
             Console.WriteLine("Lookup an account");
             Console.WriteLine("--------------------------");
