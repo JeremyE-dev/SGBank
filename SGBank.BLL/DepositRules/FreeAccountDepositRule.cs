@@ -32,9 +32,11 @@ namespace SGBank.BLL.DepositRules
             if (amount <= 0)
             {
                 response.Success = false;
-                response.Message = "Deposit amounts must be greater than zero.";
+                response.Message = "Deposit amounts must be positive";
                 return response;
             }
+
+            //this is where updated account information is stoted
 
             response.OldBalance = account.Balance;
             account.Balance += amount;

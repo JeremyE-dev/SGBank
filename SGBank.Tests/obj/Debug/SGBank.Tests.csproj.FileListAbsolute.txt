@@ -28,3 +28,7 @@ C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\obj\Debug\SGBank.Tests.cs
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\obj\Debug\SGBank.Tests.csproj.CopyComplete
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\obj\Debug\SGBank.Tests.dll
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\obj\Debug\SGBank.Tests.pdb
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\bin\Debug\Ninject.dll
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\bin\Debug\System.ValueTuple.dll
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\bin\Debug\Ninject.xml
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Tests\bin\Debug\System.ValueTuple.xml

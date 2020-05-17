@@ -18,8 +18,9 @@ namespace SGBank.UI.Workflows
             Console.Write("Enter an account number: ");
             string accountNumber = Console.ReadLine();
 
-            Console.Write("Enter a withdrawal amount: ");
-            decimal amount = decimal.Parse(Console.ReadLine());
+           
+
+            decimal amount = WorkflowHelpers.DecimalInputValidation("Enter a withdrawal amount: ");
 
             AccountWithdrawResponse response = accountManager.Withdraw(accountNumber, amount);
 

@@ -38,6 +38,7 @@ namespace SGBank.BLL
             return response;
         }
 
+    
         public AccountDepositResponse Deposit(string accountNumber, decimal amount)
         {
             AccountDepositResponse response = new AccountDepositResponse();

@@ -18,8 +18,11 @@ namespace SGBank.UI.Workflows
             Console.Write("Enter an account number: ");
             string accountNumber = Console.ReadLine();
 
-            Console.Write("Enter a deposit amount: ");
-            decimal amount = decimal.Parse(Console.ReadLine());
+         
+            //added input amount validation
+            decimal amount = WorkflowHelpers.DecimalInputValidation("Enter a deposit amount: ");
+
+            
 
             AccountDepositResponse response = accountManager.Deposit(accountNumber, amount);
 

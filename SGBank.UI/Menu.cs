@@ -21,10 +21,17 @@ namespace SGBank.UI
                 Console.WriteLine("3. Withdraw");
 
                 Console.WriteLine("\nQ to quit");
+
+               
                 Console.Write("\nEnter selection: ");
 
                 string userinput = Console.ReadLine();
 
+
+
+                WorkflowHelpers.MenuInputValidation(userinput);
+
+     
                 switch(userinput)
                 {
                     case "1":

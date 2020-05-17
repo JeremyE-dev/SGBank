@@ -20,3 +20,5 @@ C:\Users\Jeremy\source\repos\SGBank052020\SGBank.BLL\obj\Debug\SGBank.BLL.dll
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.BLL\obj\Debug\SGBank.BLL.pdb
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.BLL\bin\Debug\Ninject.dll
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.BLL\bin\Debug\Ninject.xml
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.BLL\bin\Debug\System.ValueTuple.dll
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.BLL\bin\Debug\System.ValueTuple.xml

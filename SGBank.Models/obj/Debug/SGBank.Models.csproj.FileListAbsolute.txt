@@ -11,3 +11,5 @@ C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Models\obj\Debug\SGBank.Models.
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Models\obj\Debug\SGBank.Models.csproj.CopyComplete
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Models\obj\Debug\SGBank.Models.dll
 C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Models\obj\Debug\SGBank.Models.pdb
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Models\bin\Debug\System.ValueTuple.dll
+C:\Users\Jeremy\source\repos\SGBank052020\SGBank.Models\bin\Debug\System.ValueTuple.xml
